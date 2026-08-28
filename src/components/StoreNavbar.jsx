@@ -1,0 +1,5 @@
+import { Badge, Container, Nav, Navbar } from 'react-bootstrap'
+export default function StoreNavbar({ page, navigate, cartCount }) {
+  const links = [['inicio', 'Inicio'], ['productos', 'Productos'], ['detalle', 'Detalle'], ['carrito', 'Carrito'], ['pago', 'Pago'], ['contacto', 'Contacto']]
+  return <><div className="announcement">Envío gratis en compras mayores a $50 · Atención personalizada</div><Navbar expand="lg" sticky="top" className="store-navbar"><Container><Navbar.Brand onClick={() => navigate('inicio')} role="button"><span>DM</span> BEAUTY</Navbar.Brand><Navbar.Toggle aria-controls="main-nav" /><Navbar.Collapse id="main-nav"><Nav className="mx-auto">{links.map(([key, label]) => <Nav.Link key={key} active={page === key} onClick={() => navigate(key)}>{label}</Nav.Link>)}</Nav><button className="cart-button" onClick={() => navigate('carrito')} aria-label={`Carrito con ${cartCount} productos`}><span>♡</span><span>🛍</span><Badge pill>{cartCount}</Badge></button></Navbar.Collapse></Container></Navbar></>
+}

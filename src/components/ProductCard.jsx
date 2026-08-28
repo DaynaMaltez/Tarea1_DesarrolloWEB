@@ -1,0 +1,5 @@
+import { Badge, Button, Card } from 'react-bootstrap'
+import { money } from '../data'
+export default function ProductCard({ product, onAdd, onDetail, onQuickView }) {
+  return <Card className="product-card h-100"><div className="product-image-wrap"><Card.Img variant="top" src={product.image} alt={product.name} /><Badge className="product-badge">{product.badge}</Badge><button className="quick-view" onClick={() => onQuickView(product)}>Vista rápida</button></div><Card.Body className="d-flex flex-column"><small>{product.category}</small><Card.Title>{product.name}</Card.Title><div className="rating">★★★★★ <span>{product.rating}</span></div><Card.Text>{product.description}</Card.Text><div className="mt-auto d-flex align-items-center justify-content-between gap-2"><div className="price">{money(product.price)} {product.oldPrice && <del>{money(product.oldPrice)}</del>}</div><Button onClick={() => onAdd(product)} className="add-button">Añadir</Button></div><button className="detail-link" onClick={() => onDetail(product)}>Ver detalles →</button></Card.Body></Card>
+}
