@@ -1,4 +1,4 @@
--# Proyecto Web
+# Proyecto 
 
 Aplicación web desarrollada con **React**, **Vite** y **React Bootstrap**.
 Se realizó la actualización de la tarea 1, agregando nuevas funcionalidades y mejoras estéticas utilizando React, Vite y React Bootstrap 
